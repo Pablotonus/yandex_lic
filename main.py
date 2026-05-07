@@ -145,6 +145,14 @@ def add_start_clubs():
     db_sess.commit()
 
 
+def prepare_database():
+    db_session.global_init('db/clubs.db')
+    add_start_clubs()
+
+
+prepare_database()
+
+
 @app.route('/')
 @app.route('/index')
 def index():
@@ -288,8 +296,6 @@ def profile():
 
 
 def main():
-    db_session.global_init('db/clubs.db')
-    add_start_clubs()
     port = int(os.environ.get('PORT', 8080))
     app.run(port=port, host='0.0.0.0')
 
