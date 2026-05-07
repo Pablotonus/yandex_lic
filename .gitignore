@@ -1,0 +1,11 @@
+.idea
+venv
+.venv
+.deps
+__pycache__
+*.pyc
+server.log
+server.err
+db/*.db
+!db/.gitkeep
+

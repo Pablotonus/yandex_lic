@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Личный кабинет</h1>
+<div class="profile-box">
+    <p><b>Имя:</b> {{ current_user.name }}</p>
+    <p><b>Почта:</b> {{ current_user.email }}</p>
+</div>
+
+<h2>Мои кружки</h2>
+{% if enrollments %}
+    <div class="row">
+        {% for enrollment in enrollments %}
+            <div class="col-md-6">
+                <div class="club-card">
+                    <img class="club-photo" src="{{ url_for('static', filename='img/club_' ~ enrollment.club.id ~ '.png') }}" alt="{{ enrollment.club.title }}">
+                    <h3>{{ enrollment.club.title }}</h3>
+                    <p>{{ enrollment.club.description }}</p>
+                    <div class="club-meta">
+                        <span>Расписание: {{ enrollment.club.schedule }}</span>
+                        <span>Участников: {{ enrollment.club.enrollments|length }}</span>
+                    </div>
+                    <a class="btn btn-primary" href="/club/{{ enrollment.club.id }}">Открыть</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>Вы пока не записались ни на один кружок.</p>
+    <a class="btn btn-primary" href="/">Выбрать кружок</a>
+{% endif %}
+{% endblock %}

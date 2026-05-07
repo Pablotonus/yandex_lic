@@ -1,0 +1,367 @@
+body {
+    background-color: #f4f5f7;
+    color: #20242a;
+    font-size: 16px;
+}
+
+.top-nav {
+    border-bottom: 1px solid #d7dce3;
+    padding-left: 28px;
+    padding-right: 28px;
+    background-color: #ffffff !important;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-actions {
+    margin-left: auto;
+}
+
+.nav-actions .btn {
+    margin-left: 8px;
+}
+
+main.container {
+    max-width: 1040px;
+    padding-top: 30px;
+    padding-bottom: 48px;
+}
+
+h1 {
+    margin-bottom: 24px;
+    font-weight: 700;
+}
+
+.page-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: white;
+    border: 1px solid #d7dce3;
+    border-left: 5px solid #496b8f;
+    border-radius: 6px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+}
+
+.page-head h1 {
+    margin-bottom: 6px;
+    font-size: 32px;
+}
+
+.page-head p {
+    margin-bottom: 0;
+    color: #5d6d7e;
+}
+
+.section-label {
+    color: #687381;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    margin-bottom: 4px !important;
+}
+
+.notice-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1px;
+    background-color: #d7dce3;
+    border: 1px solid #d7dce3;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+.notice-strip div {
+    background-color: #ffffff;
+    padding: 14px 16px;
+}
+
+.notice-strip b,
+.notice-strip span {
+    display: block;
+}
+
+.notice-strip b {
+    margin-bottom: 4px;
+}
+
+.notice-strip span {
+    color: #5d6672;
+    font-size: 14px;
+}
+
+.benefits-grid,
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.detail-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.benefit-card,
+.detail-card {
+    background-color: white;
+    border: 1px solid #dce3eb;
+    border-radius: 8px;
+    padding: 18px;
+    box-shadow: 0 6px 18px rgba(30, 45, 65, 0.04);
+}
+
+.benefit-card h2,
+.detail-card h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.benefit-card p,
+.detail-card p {
+    margin-bottom: 0;
+    color: #465668;
+}
+
+.club-card,
+.profile-box,
+.club-page,
+.form-box {
+    background-color: white;
+    border: 1px solid #d7dce3;
+    border-radius: 6px;
+    padding: 18px;
+    margin-bottom: 16px;
+    box-shadow: none;
+}
+
+.club-card {
+    display: flex;
+    gap: 18px;
+}
+
+.club-list .club-card {
+    align-items: stretch;
+}
+
+.row .club-card {
+    flex-direction: column;
+    gap: 0;
+}
+
+.row .club-card .club-photo {
+    margin-bottom: 16px;
+}
+
+.club-card-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.club-image-box {
+    flex: 0 0 220px;
+}
+
+.club-card h2,
+.club-card h3 {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.club-card p {
+    margin-bottom: 10px;
+}
+
+.status-badge {
+    display: inline-block;
+    background-color: #eef3f0;
+    border: 1px solid #cfdad2;
+    border-radius: 4px;
+    color: #355b42;
+    font-weight: 600;
+    padding: 4px 8px;
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.card-topline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    color: #687381;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.card-result {
+    background-color: #f7f8fa;
+    border-left: 3px solid #7992aa;
+    border-radius: 4px;
+    padding: 9px 11px;
+    color: #3d4854;
+}
+
+.club-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+    margin-bottom: 0;
+    background-color: #e8edf3;
+}
+
+.club-page-photo {
+    max-height: none;
+}
+
+.success-box {
+    margin-top: 20px;
+}
+
+.club-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 12px 0 12px;
+}
+
+.club-meta span,
+.participant-list span {
+    display: inline-block;
+    background-color: #f4f6f8;
+    border: 1px solid #d9dee5;
+    border-radius: 4px;
+    padding: 5px 8px;
+    color: #354353;
+    font-size: 14px;
+}
+
+.club-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    border-radius: 5px;
+}
+
+.back-button {
+    margin-bottom: 18px;
+}
+
+.lead-text {
+    color: #465668;
+    font-size: 18px;
+}
+
+.club-layout {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.club-page-image .club-photo {
+    height: 100%;
+}
+
+.club-summary h1 {
+    margin-bottom: 10px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.info-grid div {
+    background-color: #f7f8fa;
+    border: 1px solid #d9dee5;
+    border-radius: 5px;
+    padding: 12px;
+}
+
+.info-grid b,
+.info-grid span {
+    display: block;
+}
+
+.info-grid b {
+    margin-bottom: 5px;
+}
+
+.participants-box {
+    border-top: 1px solid #d7dce3;
+    margin-top: 26px;
+    padding-top: 22px;
+}
+
+.participants-box h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.participant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.learn-list {
+    margin-bottom: 0;
+    padding-left: 20px;
+    color: #465668;
+}
+
+.learn-list li {
+    margin-bottom: 8px;
+}
+
+.learn-list li:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .page-head {
+        display: block;
+    }
+
+    .page-head .btn {
+        margin-top: 14px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .notice-strip,
+    .benefits-grid,
+    .detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .club-card,
+    .club-layout {
+        display: block;
+    }
+
+    .club-image-box,
+    .club-page-image {
+        margin-bottom: 14px;
+    }
+}

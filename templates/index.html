@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="page-head">
+    <div>
+        <p class="section-label">Дополнительные занятия</p>
+        <h1>Кружки на эту четверть</h1>
+        <p>Выберите направление, посмотрите расписание и список участников. После записи кружок появится в личном кабинете.</p>
+    </div>
+    {% if current_user.is_authenticated %}
+        <a class="btn btn-outline-primary" href="/profile">Мои кружки</a>
+    {% else %}
+        <a class="btn btn-success" href="/login">Войти для записи</a>
+    {% endif %}
+</div>
+
+<div class="notice-strip">
+    <div>
+        <b>Занятия после уроков</b>
+        <span>Время указано в карточке кружка.</span>
+    </div>
+    <div>
+        <b>Группы небольшие</b>
+        <span>Можно видеть, кто уже записался.</span>
+    </div>
+    <div>
+        <b>Запись сохраняется</b>
+        <span>Список кружков хранится в профиле участника.</span>
+    </div>
+</div>
+
+<div class="club-list">
+    {% for club in clubs %}
+        {% set details = club_details[club.id] %}
+        <div class="club-card">
+            <div class="club-image-box">
+                <img class="club-photo" src="{{ url_for('static', filename='img/club_' ~ club.id ~ '.png') }}" alt="{{ club.title }}">
+            </div>
+            <div class="club-card-body">
+                <div class="card-topline">
+                    <span class="status-badge">{{ details.status }}</span>
+                    <span>{{ details.level }}</span>
+                </div>
+                <h2>{{ club.title }}</h2>
+                <p>{{ club.description }}</p>
+                <div class="club-meta">
+                    <span><b>Расписание:</b> {{ club.schedule }}</span>
+                    <span><b>Срок:</b> {{ details.duration }}</span>
+                    <span><b>Записано:</b> {{ club.enrollments|length }}</span>
+                </div>
+                <p class="card-result"><b>Итог:</b> {{ details.result }}</p>
+                <div class="club-actions">
+                    <a class="btn btn-primary" href="/club/{{ club.id }}">Подробнее</a>
+                    {% if current_user.is_authenticated %}
+                        <a class="btn btn-outline-success" href="/enroll/{{ club.id }}">Записаться</a>
+                    {% else %}
+                        <a class="btn btn-outline-secondary" href="/login">Войти</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

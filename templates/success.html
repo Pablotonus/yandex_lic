@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="alert alert-success success-box" role="alert">
+    Заявка на кружок «{{ club.title }}» принята.
+</div>
+<a class="btn btn-primary" href="/profile">Перейти в личный кабинет</a>
+<a class="btn btn-secondary" href="/">К списку кружков</a>
+{% endblock %}
+

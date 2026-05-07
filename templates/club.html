@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="club-page">
+    <a class="btn btn-outline-secondary btn-sm back-button" href="/">Назад к кружкам</a>
+
+    <div class="club-layout">
+        <div class="club-page-image">
+            <img class="club-photo club-page-photo" src="{{ url_for('static', filename='img/club_' ~ club.id ~ '.png') }}" alt="{{ club.title }}">
+        </div>
+        <div class="club-summary">
+            <div class="card-topline">
+                <span class="status-badge">{{ details.status }}</span>
+                <span>{{ details.level }}</span>
+            </div>
+            <h1>{{ club.title }}</h1>
+            <p class="lead-text">{{ club.description }}</p>
+            <p>{{ details.long_description }}</p>
+            <div class="club-actions">
+                {% if enrolled %}
+                    <a class="btn btn-secondary" href="/profile">Открыть личный кабинет</a>
+                    <a class="btn btn-outline-primary" href="/">Выбрать ещё кружок</a>
+                {% else %}
+                    <a class="btn btn-success" href="/enroll/{{ club.id }}">Записаться</a>
+                    <a class="btn btn-outline-primary" href="/profile">Личный кабинет</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <div class="info-grid">
+        <div><b>Расписание</b><span>{{ club.schedule }}</span></div>
+        <div><b>Срок</b><span>{{ details.duration }}</span></div>
+        <div><b>Преподаватель</b><span>{{ club.teacher }}</span></div>
+        <div><b>Кабинет</b><span>{{ club.classroom }}</span></div>
+        <div><b>Класс</b><span>{{ details.level }}</span></div>
+        <div><b>Записано</b><span>{{ participants|length }}</span></div>
+    </div>
+
+    <div class="detail-grid">
+        <div class="detail-card">
+            <h2>Чему научишься</h2>
+            <ul class="learn-list">
+                {% for item in details.learn %}
+                    <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="detail-card">
+            <h2>Итог курса</h2>
+            <p>{{ details.result }}</p>
+        </div>
+        <div class="detail-card">
+            <h2>Кому подойдёт</h2>
+            <p>{{ details.audience }}</p>
+        </div>
+        <div class="detail-card">
+            <h2>Что нужно</h2>
+            <p>{{ details.bring }}</p>
+        </div>
+    </div>
+
+    {% if enrolled %}
+        <div class="alert alert-success" role="alert">
+            Вы уже записаны на этот кружок.
+        </div>
+    {% endif %}
+
+    <div class="participants-box">
+        <h2>Участники кружка</h2>
+        {% if participants %}
+            <div class="participant-list">
+                {% for participant in participants %}
+                    <span>{{ participant.name }}</span>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Пока никто не записался. Можно быть первым участником.</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
